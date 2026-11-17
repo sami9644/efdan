@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Efdan Gym – Piassa, Addis Ababa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceff2;--surface:#fff;--ink:#16202c;--muted:#56626f;--line:#cfd6dd;--accent:#d98a0b;--on-accent:#16202c;--hero:#16202c;--hero-ink:#f3f5f7;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f161e;--surface:#18222d;--ink:#eef1f4;--muted:#9aa7b4;--line:#2a3745;--accent:#f0a93a;--on-accent:#16202c;--hero:#1d2a38;--hero-ink:#f3f5f7}}
+:root[data-theme="dark"]{--bg:#0f161e;--surface:#18222d;--ink:#eef1f4;--muted:#9aa7b4;--line:#2a3745;--accent:#f0a93a;--on-accent:#16202c;--hero:#1d2a38;--hero-ink:#f3f5f7}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 "Barlow",system-ui,sans-serif}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:1;margin:0;font-weight:800;letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.logo{font:800 1.7rem "Barlow Condensed",sans-serif;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:26px;height:26px;border-radius:50%;border:6px solid var(--accent);display:inline-block;box-shadow:0 0 0 3px var(--ink) inset}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{text-decoration:none;padding:8px 14px;border-radius:6px;font-weight:600;font-size:.98rem}
+nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+nav a:hover:not([aria-current]){background:var(--bg)}
+.view{display:none}.view.on{display:block}
+.hero{background:var(--hero);color:var(--hero-ink);padding:64px 0 56px}
+.hero h1{font-size:clamp(3rem,10vw,6.4rem);max-width:12ch;text-transform:none}
+.hero p{max-width:46ch;color:#c4ccd5;margin:18px 0 28px;font-size:1.15rem}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:600;text-decoration:none;padding:12px 22px;border-radius:6px;border:2px solid var(--accent);cursor:pointer;font:inherit;font-weight:600}
+.btn.alt{background:transparent;color:inherit;border-color:currentColor}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:52px 0}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:8px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 28px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{font-size:1.6rem;margin-bottom:6px}
+.card p{margin:6px 0;color:var(--muted)}
+.price{font:800 2.2rem "Barlow Condensed",sans-serif;color:var(--ink)}
+.card.feat{border:2px solid var(--accent)}
+table{width:100%;border-collapse:collapse}
+td{padding:10px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right;font-weight:600}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:800 2rem "Barlow Condensed",sans-serif;margin-bottom:14px}
+.tag{display:inline-block;font-size:.85rem;font-weight:600;background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:2px 10px;margin:4px 6px 0 0}
+.job{display:flex;gap:18px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.job h3{font-size:1.7rem}
+.split{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.map{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.map svg{display:block;width:100%;height:auto}
+.map .cap{padding:16px 20px;border-top:1px solid var(--line)}
+.ct{list-style:none;padding:0;margin:0 0 22px}.ct li{padding:12px 0;border-bottom:1px solid var(--line)}
+.ct b{display:block;font-size:.9rem;color:var(--muted);font-weight:500}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.92rem}
+@media (prefers-reduced-motion:no-preference){.hero h1{animation:rise .7s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(14px)}}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#home"><i></i>Efdan Gym</a>
+<nav aria-label="Main">
+<a href="#home" data-v="home">Home</a><a href="#trainers" data-v="trainers">Trainers</a><a href="#vacancies" data-v="vacancies">Vacancies</a><a href="#contact" data-v="contact">Contact</a>
+</nav></div></header>
+
+<main>
+<div class="view" id="v-home">
+<div class="hero"><div class="wrap">
+<h1>Train hard in the heart of Piassa.</h1>
+<p>Free weights, a full cardio floor and coaches who know your name. Open early, open late, five minutes from Arada.</p>
+<div class="btns"><a class="btn" href="#contact">Visit us</a><a class="btn alt" href="#trainers">Meet the trainers</a></div>
+</div></div>
+<section><div class="wrap">
+<h2>Memberships</h2><p class="lead">Prices are sample data. Replace them with your own.</p>
+<div class="grid">
+<div class="card"><h3>Monthly</h3><div class="price">1,500 ETB</div><p>Full gym floor access, lockers and showers.</p></div>
+<div class="card feat"><h3>Quarterly</h3><div class="price">3,900 ETB</div><p>Everything in Monthly, plus two coached sessions and a body check.</p></div>
+<div class="card"><h3>Annual</h3><div class="price">13,500 ETB</div><p>Best value. Includes a guest pass every month.</p></div>
+</div></div></section>
+<section style="padding-top:0"><div class="wrap split">
+<div><h2>Opening hours</h2><p class="lead">Closed on public holidays.</p>
+<table><tr><td>Monday – Friday</td><td>5:30 AM – 10:00 PM</td></tr><tr><td>Saturday</td><td>6:30 AM – 8:00 PM</td></tr><tr><td>Sunday</td><td>8:00 AM – 2:00 PM</td></tr></table></div>
+<div><h2>Find us</h2><p class="lead">Piassa, Addis Ababa, Ethiopia.</p><a class="btn" id="mapbtn1" target="_blank" rel="noopener" href="#">Open in Google Maps</a></div>
+</div></section>
+</div>
+
+<div class="view" id="v-trainers"><section><div class="wrap">
+<h2>Our trainers</h2><p class="lead">Certified coaches for every goal. All profiles are dummy data.</p>
+<div class="grid" id="tr"></div></div></section></div>
+
+<div class="view" id="v-vacancies"><section><div class="wrap">
+<h2>Vacancies</h2><p class="lead">Join the Efdan team. Send your CV to the email in each listing.</p>
+<div class="grid" style="grid-template-columns:1fr" id="jobs"></div></div></section></div>
+
+<div class="view" id="v-contact"><section><div class="wrap">
+<h2>Contact and location</h2><p class="lead">Drop in, call, or message us. We reply within a day.</p>
+<div class="split">
+<div>
+<ul class="ct">
+<li><b>Address</b>Piassa, Addis Ababa, Ethiopia</li>
+<li><b>Phone</b><a href="tel:+251110000000">+251 11 000 0000</a></li>
+<li><b>Mobile / Telegram</b><a href="tel:+251911000000">+251 91 100 0000</a></li>
+<li><b>Email</b><a href="mailto:hello@efdangym.example">hello@efdangym.example</a></li>
+<li><b>Instagram</b>@efdangym</li>
+</ul>
+<a class="btn" id="mapbtn2" target="_blank" rel="noopener" href="#">Get directions on Google Maps</a>
+</div>
+<div class="map">
+<svg viewBox="0 0 400 260" role="img" aria-label="Simplified sketch map of Piassa with the gym marked">
+<rect width="400" height="260" fill="var(--bg)"/>
+<g stroke="var(--line)" stroke-width="14" fill="none" stroke-linecap="round"><path d="M0 180 L400 90"/><path d="M120 0 L200 260"/><path d="M0 60 L400 210"/><path d="M300 0 L260 260"/></g>
+<g stroke="var(--surface)" stroke-width="8" fill="none" stroke-linecap="round"><path d="M0 180 L400 90"/><path d="M120 0 L200 260"/><path d="M0 60 L400 210"/><path d="M300 0 L260 260"/></g>
+<path d="M200 96c-16 0-28 12-28 28 0 22 28 50 28 50s28-28 28-50c0-16-12-28-28-28z" fill="var(--accent)" stroke="var(--ink)" stroke-width="3"/>
+<circle cx="200" cy="124" r="9" fill="var(--ink)"/>
+<text x="200" y="196" text-anchor="middle" font-family="Barlow,sans-serif" font-weight="600" font-size="15" fill="var(--ink)">Efdan Gym</text>
+<text x="14" y="246" font-family="Barlow,sans-serif" font-size="12" fill="var(--muted)">Sketch only – use the link for the real map</text>
+</svg>
+<div class="cap">Piassa, Addis Ababa<br><a id="mapbtn3" target="_blank" rel="noopener" href="#">View on Google Maps</a></div>
+</div></div></div></section></div>
+</main>
+
+<footer><div class="wrap">© 2026 Efdan Gym · Piassa, Addis Ababa</div></footer>
+
+<script>
+var MAP="https://www.google.com/maps/search/?api=1&query=Piassa%2C+Addis+Ababa%2C+Ethiopia";
+["mapbtn1","mapbtn2","mapbtn3"].forEach(function(i){document.getElementById(i).href=MAP});
+var T=[["Dawit Alemu","Head coach","Strength, Powerlifting","10 years coaching. Builds programs around real schedules."],
+["Selam Tesfaye","Group fitness","HIIT, Mobility","Leads the 6 AM and 6 PM classes. High energy, clear cues."],
+["Biruk Haile","Personal trainer","Weight loss, Nutrition","Focuses on habits that last past the first month."],
+["Hanna Girma","Women’s fitness","Toning, Pilates","Runs the women-only evening sessions."],
+["Yonas Bekele","Boxing coach","Boxing, Conditioning","Former regional amateur champion."],
+["Meron Abate","Rehab and recovery","Injury prevention, Stretching","Helps members return safely after injury."]];
+document.getElementById("tr").innerHTML=T.map(function(t){return '<div class="card"><div class="avatar" aria-hidden="true">'+t[0].split(" ").map(function(w){return w[0]}).join("")+'</div><h3>'+t[0]+'</h3><p><b>'+t[1]+'</b></p><p>'+t[3]+'</p>'+t[2].split(", ").map(function(s){return '<span class="tag">'+s+'</span>'}).join("")+'</div>'}).join("");
+var J=[["Personal Trainer","Full-time","Certified trainer with 2+ years of experience. Build and coach one-to-one clients."],
+["Front Desk Receptionist","Full-time","Greet members, manage sign-ups and payments. Amharic and English required."],
+["Group Class Instructor","Part-time","Lead evening HIIT or aerobics classes, Monday to Thursday."],
+["Cleaning and Facilities Attendant","Part-time","Keep the floor, lockers and showers clean and safe."]];
+document.getElementById("jobs").innerHTML=J.map(function(j){return '<div class="card job"><div><h3>'+j[0]+'</h3><p><span class="tag">'+j[1]+'</span><span class="tag">Piassa, Addis Ababa</span></p><p>'+j[2]+'</p></div><a class="btn" href="mailto:jobs@efdangym.example?subject='+encodeURIComponent("Application: "+j[0])+'">Apply by email</a></div>'}).join("");
+function route(){var h=(location.hash||"#home").slice(1);if(!document.getElementById("v-"+h))h="home";
+["home","trainers","vacancies","contact"].forEach(function(v){document.getElementById("v-"+v).classList.toggle("on",v===h)});
+document.querySelectorAll("nav a").forEach(function(a){if(a.dataset.v===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});window.scrollTo(0,0)}
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
